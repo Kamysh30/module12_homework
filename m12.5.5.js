@@ -1,9 +1,11 @@
 class ElectricDevices{
     constructor(name,mode,power){
-    this.name = name;
-    this.mode = mode;
-    this.power = power;
-    this.getPower = function(){
+        this.name = name;
+        this.mode = mode;
+        this.power = power;
+    }
+
+    getPower() {
         if(this.mode == 1){
             console.log(`это ${this.name} потребляет ${this.power} ватт`);
         }else{
@@ -11,7 +13,7 @@ class ElectricDevices{
         }
     }
 
-    this.getMode = function(){
+    getMode() {
         if(this.mode == 1){
             console.log(`Устройство ${this.name} включено в сеть`)
         }else{
@@ -19,42 +21,38 @@ class ElectricDevices{
         }
     }
 
-    this.flagOn = function(){
+    flagOn() {
         this.mode = 1;
     }
 
-    this.flagOff = function(){
+    flagOff() {
         this.mode = 0;
     }
 }
-}
-    class ElectricKettle extends ElectricDevices{
-        constructor(name,brand,madeIn,power,mode){
+class ElectricKettle extends ElectricDevices{
+    constructor(name,brand,madeIn,power,mode){
         super(name,mode,power);
         this.brand =  brand;
         this.madeIn = madeIn;
-        
-        
-        this.getInfoMadeIn = function(){
-            console.log(`это ${this.name} произведен в ${this.madeIn} компанией ${this.brand}`);
-        }
     }
+    
+    getInfoMadeIn() {
+        console.log(`это ${this.name} произведен в ${this.madeIn} компанией ${this.brand}`);
     }
-
+}
     
 
-    class MicrowaveOven extends ElectricDevices{
-        constructor(name,brand,color,madeIn,productionDate,power,mode){
-       super(name,mode,power);
+class MicrowaveOven extends ElectricDevices{
+    constructor(name,brand,color,madeIn,productionDate,power,mode){
+        super(name,mode,power);
         this.brand = brand;
         this.color = color;
         this.madeIn = madeIn;
         this.productionDate = productionDate;
-      
-        
-        this.getProductionDate = function(){
-            console.log(`это ${this.name} произведен в ${this.madeIn} компанией ${this.brand} в ${this.productionDate} году и имеет ${this.color} цвет`);
-        }
+    }
+
+    getProductionDate() {
+        console.log(`это ${this.name} произведен в ${this.madeIn} компанией ${this.brand} в ${this.productionDate} году и имеет ${this.color} цвет`);
     }
 }
     
@@ -82,3 +80,5 @@ class ElectricDevices{
         console.log(`расход энергии : ${consumption} ватт`)
     }
     powerConsumption(electricKettle,microwaveOven);
+
+// Всё сделано верно, но при написании классов лучше использовать специальный упрощенный синтаксис для задания методов (без ключевого слова this). Выше исправила

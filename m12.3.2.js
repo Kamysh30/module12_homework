@@ -6,16 +6,9 @@ const obj = {
 let str = "car1";
 
 function getStrObj(str, obj){
- for(let key in obj){
-     if (key === str)
-         return true;
-     }
- return false;
+    return str in obj;
 }
-
 
 getStrObj("car2", obj);
 
-
-
-
+// Задача решена верно, но функцию getStrObj можно упростить. Выше показала как
